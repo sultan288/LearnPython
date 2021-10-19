@@ -1073,20 +1073,423 @@ from random import randint
 # Constructor
 # ===================================================
 
-class Student:
-    roll = ""
-    gpa = ""
+# class Student:
+#     roll = ""
+#     gpa = ""
+#
+#     def __init__(self, roll, gpa):
+#         self.roll = roll
+#         self.gpa = gpa
+#
+#     def display(self):
+#         print(f"Roll : {self.roll}, GPA : {self.gpa}")
+#
+#
+# rahim = Student(101, 3.45)
+# rahim.display()
+#
+# karim = Student(102, 3.23)
+# karim.display()
 
-    def __init__(self, roll, gpa):
-        self.roll = roll
-        self.gpa = gpa
+# Exercise
+# ==================================================
 
-    def display(self):
-        print(f"Roll : {self.roll}, GPA : {self.gpa}")
+# class Triangle:
+#     def __init__(self, base, height):
+#         self.base = base
+#         self.height = height
+#
+#     def calculate_area(self):
+#         area = .5 * self.base * self.height
+#         print("The result is :", area)
+#
+#
+# t1 = Triangle(10, 20)
+# t1.calculate_area()
+#
+# t2 = Triangle(20, 30)
+# t2.calculate_area()
+
+# Inheritance:
+# ======================================================
+# parent class/super class/ base class
+# child class / sub class / derived class
+
+# class Phone:
+#     def call(self):
+#         print("You can p call")
+#
+#     def message(self):
+#         print("You can p message")
+#
+#
+# class Samsung(Phone):
+#     def photo(self):
+#         print("You can take photo")
+#
+#         # def call(self):
+#         #     print("You can p call")
+#         #
+#         # def message(self):
+#         #     print("You can p message")
+#
+# p = Phone()
+# p.call()
+# p.message()
+#
+#
+# s = Samsung()
+# s.call()
+# s.message()
+# s.photo()
+#
+# print(issubclass(Samsung,Phone))
+#
+# print(issubclass(Phone,Samsung))
 
 
-rahim = Student(101, 3.45)
-rahim.display()
+# Method Overriding
+# ==========================================
 
-karim = Student(102, 3.23)
-karim.display()
+# class Phone:
+#     def __init__(self):
+#         print("I am in phone class")
+#
+#
+# class Samsung(Phone):
+#     # init
+#     # def __init__(self):      # here init method is overriding from Phone class
+#     #     print("I am in Samsung class")
+#
+#     # here we print the init method of super class : Phone
+#     def __init__(self):
+#         super().__init__()
+#         print("I am in Samsung class")
+#
+#
+# s = Samsung()
+
+# Practical example of Inheritance
+# ======================================================
+# Hierarchical Inheritance
+
+# class Shape:
+#     def __init__(self,d1,d2):
+#         self.d1 = d1
+#         self.d2 = d2
+#
+#     def area(self):
+#         print("I am area method of shape class")
+#
+#
+# class Triangle(Shape):
+#     # init
+#     def area(self):
+#         area = 0.5 * self.d1 * self.d2
+#         print("Area of a Triangle", area)
+#
+#
+# class Rectangle(Shape):
+#     # init
+#     def area(self):
+#         area = self.d1 * self.d2
+#         print("Area of a Rectangle", area)
+#
+#
+# t1 = Triangle(20,30)
+# t1.area()
+#
+# r1 = Rectangle(20,30)
+# r1.area()
+
+# -----------------------------------------------
+
+# class Phone:
+#     def __init__(self):
+#         print("I am in phone class")
+#
+#
+# class Samsung(Phone):
+#     # init
+#     # def __init__(self):      # here init method is overriding from Phone class
+#     #     print("I am in Samsung class")
+#
+#     # here we print the init method of super class : Phone
+#     def __init__(self):
+#         super().__init__()
+#         print("I am in Samsung class")
+#
+#
+# s = Samsung()
+
+# ==================================================
+# Multilevel Inheritance
+
+# class A:
+#     def display1(self):
+#         print("I am A class")
+#
+#
+# class B(A):
+#     # display1()
+#     def display2(self):
+#         print("I am B class")
+#
+#
+# class C(B):
+#     #display1()
+#     #display2()
+#     def display3(self):
+#         super().display1()
+#         super().display2()
+#         print("I am C class")
+#
+#
+# # obj1 = C()
+# # obj1.display1()
+# # obj1.display2()
+# # obj1.display3()
+#
+# obj1 = C()
+# obj1.display3()
+
+# Multiple inheritance
+# =========================================================
+
+# class A:
+#     def display(self):
+#         print("I am A class")
+#
+#
+# class B:
+#     # display1()
+#     def display(self):
+#         print("I am B class")
+#
+#
+# class C(B, A):
+#     # A-display1()
+#     # B-display2()
+#     pass
+#     # def display(self):
+#     #     print("I am C class")
+#
+#
+# ob1 = C()
+# ob1.display()
+
+# OOP Features
+# ===================================================
+# Abstraction
+# from abc import ABC, abstractmethod
+#
+#
+# class Shape(ABC):
+#     def __init__(self,d1,d2):
+#         self.d1 = d1
+#         self.d2 = d2
+#     @abstractmethod
+#     def area(self):
+#         pass
+#
+#
+# class Triangle(Shape):
+#     # init
+#     def area(self):
+#         area = 0.5 * self.d1 * self.d2
+#         print("Area of a Triangle", area)
+#
+#
+# class Rectangle(Shape):
+#     # init
+#     def area(self):
+#         area = self.d1 * self.d2
+#         print("Area of a Rectangle", area)
+#
+#
+# t1 = Triangle(20,30)
+# t1.area()
+#
+# r1 = Rectangle(20,30)
+# r1.area()
+
+# Polymorphism
+# ====================================================
+
+# Built in Polymorphic function
+# print(len("Anisul Islam"))
+# print(len([10,20,30]))
+
+# user defined Polymorphic function
+# def add(x,y,z = 0):
+#     return x + y + z
+#
+#
+# print(add(2,3))
+# print(add(2,3,4))
+
+#=================================================
+# Magic Methods written as __init__
+
+# class Bike:
+#     def __init__(self,name,color):
+#         self.name = name
+#         self.color = color
+#
+#     def __str__(self):
+#         return (f"Name = {self.name},Color = {self.color}")
+#
+#     # def display(self):
+#     #     print(f"Name = {self.name}, Color = {self.color}")
+#
+#     def __eq__(self, other):
+#         return self.name == other.name and self.color == other.color
+#
+# bike1 = Bike("Yahama", "Blue")
+# bike2 = Bike("Hero", "Red")
+# print(str(bike1))
+# print(bike2)
+#
+# print(bike1 == bike2)
+
+
+## Module
+# ================================================
+
+# from math import pow, sqrt
+# print(pow(2,3))
+# print(sqrt(9))
+
+# import all module
+# from math import *
+# print(pow(2, 3))
+# print(sqrt(9))
+
+# Creating own module
+# ======================================================
+
+# from area import triangle_area,rectangle_area
+# from area import *
+#
+# triangle_area(10,20)
+#
+# rectangle_area(10,20)
+
+
+# Regular Expressions
+## =============================================
+
+# import re
+# pattern = r"colour"
+# if re.match(pattern,"colour Red is a colour, I love red colour"):
+#     print("Match")
+# else:
+#     print("not Matched")
+
+# -----------------------------------------------------
+# import re
+# pattern = r"colour"
+# if re.search(pattern,"Red is a colour, I love red colour"):
+#     print("Match")
+# else:
+#     print("not Matched")
+
+# ---------------------------------------------------------
+
+# import re
+# pattern = r"col"
+# print(re.findall(pattern,"colour Red is a colour, I love red colour"))
+
+# -------------------------------------------------------------
+
+# import re
+# pattern = r"colour"
+# text = "My favourite colour is Red"
+# match = re.search(pattern, text)
+# if match:
+#     print(match.start())
+#     print(match.end())
+#     print(match.span())
+
+# Search and Replace
+# =======================================================
+
+# import re
+# pattern = r"colour"
+# text1 = "My favourite colour is Red. I love red colour"
+# text2 = re.sub(pattern,"color",text1,count=1)
+# print(text2)
+
+# Meta characters
+# ==================================================
+
+# import re
+# pattern = r"colo.r"
+#
+# if re.match(pattern,"colour"):
+#     print("Matched")
+
+# ----------------------------------------------------
+
+# import re
+# pattern = r"^colo..r$"
+#
+# if re.match(pattern,"coloaur"):
+#     print("Matched")
+#
+
+# ------------------------------------------------------
+#
+# import re
+#
+# pattern = r"a*"
+# # pattern = r"(ab)*"     # more value
+#
+# if re.match(pattern, "colour"):
+#     print("Matched")
+
+# -----------------------------------------------------
+#
+# import re
+#
+# # pattern = r"a+"
+# pattern = r"a+b"
+#
+# if re.match(pattern, "abcolor"):
+#     print("Matched")
+
+# -------------------------------------------------------
+
+# import re
+#
+# pattern = r"ice(-)?cream"
+#
+# if re.match(pattern, "icecream"):
+#     print("Matched")
+
+# ----------------------------------------------------
+
+# import re
+#
+# pattern = r"a{1,3}$"
+#
+# if re.match(pattern, "aaa"):
+#     print("Matched")
+
+# -----------------------------------------------------
+
+# Character Class
+
+# import re
+#
+# pattern = r"[aeiou]"
+#
+# if re.match(pattern, "anumblaifjdsof"):
+#     print("Matched")
+
+# import re
+#
+# pattern = r"[a-z][A-Z][0-9]"
+#
+# if re.match(pattern, "aZ9a5ASD"):
+#     print("Matched")
